@@ -1,3 +1,12 @@
+/* COLOR VARIABLES */
+:root {
+  --orange: #f69907;
+  --white: #ffffff;
+  --grey: #9f9f9f;
+  --dark-grey: #313131;
+  --black: #000000;
+}
+
 /* ELEMENT SELECTORS */
 *,
 *::after,
