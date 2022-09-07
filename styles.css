@@ -45,19 +45,39 @@ body{
   grid-column: 1/3;
 }
 
-.orangeBtn{
+.operator{
   background-color: var(--orange);
   color: var(--white);
+  font-size: 2rem;
 }
 
-.orangeBtn:active:not(:last-child){
+.operator:active:not(:last-child){
   background-color: var(--white);
   color: var(--orange);
 }
 
-.greyBtn{
+
+.controls:first-child{
+  font-size: 1.5rem;
+}
+
+.controls{
   background-color: var(--grey);
   color: var(--black);
+}
+
+.plus-position,
+.minus-position{
+  font-size: 1rem;
+  position: relative;
+}
+
+.plus-position{
+  bottom: 7.5px;
+}
+
+.minus-position{
+  justify-self: flex-end
 }
 
 /* ID SELECTORS */
