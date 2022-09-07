@@ -1,3 +1,14 @@
+//Variables
+let display = document.querySelector("#display");
+const numbers = document.getElementsByClassName(".number");
+const operators = document.getElementsByClassName(".operator");
+const controls = document.getElementsByClassName(".controls");
+
+let currentValue = 0;
+let currentInput = [];
+let currentOperator = "";
+
+
 //Add Function
 const add = (num1,num2) => num1 + num2;
 
@@ -21,4 +32,3 @@ const operate = (operator, num1, num2) => {
     return divide(num1, num2);
   }
 }
-
