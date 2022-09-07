@@ -1,13 +1,31 @@
 //Variables
 let display = document.querySelector("#display");
-const numbers = document.getElementsByClassName(".number");
-const operators = document.getElementsByClassName(".operator");
-const controls = document.getElementsByClassName(".controls");
+const numbers = document.getElementsByClassName("number");
+const operators = document.getElementsByClassName("operator");
+const controls = document.getElementsByClassName("controls");
 
 let currentValue = 0;
 let currentInput = [];
 let currentOperator = "";
 
+
+//Displays Number
+function displayNumber(num){
+  if(num==""){ //Checks calculator is empty
+    display.innerText = num;
+  } else{
+  display.innerText = formatNumber(num);
+  }
+}
+
+//Formats Number with commas
+function formatNumber(num){
+  let number = Number(num);
+  if (number.toString().length <= 9){ //9 Digit Limit
+    let formattedNumber = number.toLocaleString("en");
+    return formattedNumber;
+  }
+}
 
 //Add Function
 const add = (num1,num2) => num1 + num2;
