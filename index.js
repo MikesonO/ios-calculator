@@ -21,10 +21,30 @@ function displayNumber(num){
 //Formats Number with commas
 function formatNumber(num){
   let number = Number(num);
-  if (number.toString().length <= 9){ //9 Digit Limit
-    let formattedNumber = number.toLocaleString("en");
-    return formattedNumber;
+  if (number.toString().length > 9){ //9 Digit Limit
+    return;
   }
+  let formattedNumber = number.toLocaleString("en");
+  return formattedNumber;
+}
+
+userInput = () => {
+  return display.innerText;
+}
+
+removeComma = (num) =>{
+  return Number(num.replace(/,/g, ""));
+}
+
+//Number Buttons
+for(let i = 0; i < numbers.length; i++){
+  numbers[i].addEventListener("click", (event)=> {
+    let input = removeComma(userInput());
+    if (input != NaN){//If output is a Number
+      input = input + event.target.id; //Concatenates pressed
+      displayNumber(input);
+  }
+});
 }
 
 //Add Function
