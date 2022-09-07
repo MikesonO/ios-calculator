@@ -1,9 +1,12 @@
 /* COLOR VARIABLES */
 :root {
   --orange: #f69907;
+  --orange-hover: #fcc78d;
   --white: #ffffff;
   --grey: #9f9f9f;
+  --grey-hover: #d9d9d9;
   --dark-grey: #313131;
+  --dark-grey-hover: #737373;
   --black: #000000;
 }
 
@@ -36,6 +39,13 @@ body{
   width: 60px;
   background-color: var(--dark-grey);
   color: var(--white);
+  cursor: pointer;
+  transition: 0.5s ease-out;
+}
+
+.btn:hover{
+  background-color: var(--dark-grey-hover);
+  transition: 0s ease-in;
 }
 
 .btn.spacing{
@@ -56,6 +66,10 @@ body{
   color: var(--orange);
 }
 
+.operator:hover{
+  background: var(--orange-hover);
+}
+
 
 .controls:first-child{
   font-size: 1.5rem;
@@ -64,6 +78,10 @@ body{
 .controls{
   background-color: var(--grey);
   color: var(--black);
+}
+
+.controls:hover{
+  background-color: var(--grey-hover);
 }
 
 .plus-position,
