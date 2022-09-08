@@ -11,7 +11,7 @@ let currentOperator = "";
 
 //Displays Number
 function displayNumber(num) {
-  if (num == "") { //Checks calculator is empty
+  if (num == "0") { //Checks calculator is empty
     display.innerText = num;
     controls[0].innerText = "AC";
   } else {
@@ -52,7 +52,7 @@ for (let i = 0; i < numbers.length; i++) {
 for (let i = 0; i < controls.length; i++) {
   controls[i].addEventListener("click", (event) => {
     if (event.target.id == "clear") {
-      displayNumber("");
+      displayNumber("0");
     }
 
   });
