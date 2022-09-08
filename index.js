@@ -4,11 +4,6 @@ const numbers = document.getElementsByClassName("number");
 const operators = document.getElementsByClassName("operator");
 const controls = document.getElementsByClassName("controls");
 
-let currentValue = 0;
-let currentInput = [];
-let currentOperator = "";
-
-
 //Displays Number
 function displayNumber(num) {
   if (num == "0") { //Checks calculator is empty
@@ -42,6 +37,9 @@ for (let i = 0; i < numbers.length; i++) {
   numbers[i].addEventListener("click", (event) => {
     let input = removeComma(userInput());
     if (input != NaN) { //If output is a Number
+      if(display.innerText == "0" && event.target.id == "0"){
+        return;
+      }      
       input = input + event.target.id; //Concatenates pressed
       displayNumber(input);
     }
