@@ -13,7 +13,9 @@ let currentOperator = "";
 function displayNumber(num){
   if(num==""){ //Checks calculator is empty
     display.innerText = num;
+    controls[0].innerText = "AC";
   } else{
+  controls[0].innerText = "C"; //Changes AC text to C
   display.innerText = formatNumber(num);
   }
 }
