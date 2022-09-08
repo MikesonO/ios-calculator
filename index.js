@@ -46,6 +46,16 @@ for(let i = 0; i < numbers.length; i++){
 });
 }
 
+// Controls Buttons
+for(let i = 0; i < controls.length; i++){
+  controls[i].addEventListener("click", (event) =>{
+    if(event.target.id == "clear"){
+      displayNumber("");
+    }
+
+  }); 
+}
+
 //Add Function
 const add = (num1,num2) => num1 + num2;
 
