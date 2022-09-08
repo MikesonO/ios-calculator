@@ -20,10 +20,9 @@ function displayNumber(num){
 
 //Formats Number with commas
 function formatNumber(num){
-  let number = Number(num);
-  if (number.toString().length > 9){ //9 Digit Limit
-    return;
-  }
+  const MIN = 1;
+  const MAX = 999999999;
+  let number = Math.min(Math.max(Number(num),MIN),MAX);
   let formattedNumber = number.toLocaleString("en");
   return formattedNumber;
 }
