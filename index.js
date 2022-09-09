@@ -67,9 +67,11 @@ for (let i = 0; i < controls.length; i++) {
     } else if (event.target.id == "plus-or-minus"){
       const currentNumber = getNumber();
       const currentNumberStr = userInput();
-      if (currentNumber >= 0){
+      if (currentNumberStr === "-0"){
+        setDisplay("0");
+      } else if (currentNumber >= 0){
         setDisplay("-" + currentNumber);
-      } else {
+      } else{
         setDisplay(currentNumberStr.substring(1));
       }
 
