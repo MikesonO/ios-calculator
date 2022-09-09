@@ -61,7 +61,7 @@ body{
   font-size: 2rem;
 }
 
-.operator:active:not(:last-child){
+.operator:focus:not(:last-child){
   background-color: var(--white);
   color: var(--orange);
 }
@@ -127,5 +127,6 @@ body{
   align-items: flex-end;
   justify-content: flex-end;
   font-size: 3rem;
+  font-weight: lighter;
   padding: 0 1.35rem;
 }
