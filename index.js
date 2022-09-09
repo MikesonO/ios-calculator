@@ -65,6 +65,13 @@ for (let i = 0; i < controls.length; i++) {
     if (event.target.id == "clear") {
       setDisplay("0");
     } else if (event.target.id == "plus-or-minus"){
+      const currentNumber = getNumber();
+      const currentNumberStr = userInput();
+      if (currentNumber >= 0){
+        setDisplay("-" + currentNumber);
+      } else {
+        setDisplay(currentNumberStr.substring(1));
+      }
 
     } else if (event.target.id == "percent"){
       const currentNumber = getNumber();
