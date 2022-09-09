@@ -67,7 +67,10 @@ for (let i = 0; i < controls.length; i++) {
     } else if (event.target.id == "plus-or-minus"){
 
     } else if (event.target.id == "percent"){
-      
+      const currentNumber = getNumber();
+      const newNumber = currentNumber / 100;
+      setDisplay(newNumber.toString());
+
     }
 
   });
