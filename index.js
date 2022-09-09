@@ -64,6 +64,10 @@ for (let i = 0; i < controls.length; i++) {
   controls[i].addEventListener("click", (event) => {
     if (event.target.id == "clear") {
       setDisplay("0");
+    } else if (event.target.id == "plus-or-minus"){
+
+    } else if (event.target.id == "percent"){
+      
     }
 
   });
