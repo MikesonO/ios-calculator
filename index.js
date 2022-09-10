@@ -5,6 +5,10 @@ const operators = document.getElementsByClassName("operator");
 const controls = document.getElementsByClassName("controls");
 const decimal = document.getElementById(".");
 
+//Storage for Numbers and Operators for calculations
+let numberStorage = null;
+let operatorStorage = null;
+
 //Functions
 
 //Displays User Input On Screen
@@ -42,6 +46,11 @@ const numberSelect = (numStr) =>{
 }
 };
 
+const operatorSelect = (operator) => {
+
+
+}
+
 
 // Number Buttons - Event Listener
 for(let i =0; i < numbers.length; i++){
@@ -57,7 +66,6 @@ decimal.addEventListener("click",()=>{
     setDisplay(displayString + ".");
   }
 })
-
 
 // Controls Buttons - Event Listener
 for (let i = 0; i < controls.length; i++) {
@@ -79,6 +87,29 @@ for (let i = 0; i < controls.length; i++) {
       const currentNumber = getNumber();
       const newNumber = currentNumber / 100;
       setDisplay(newNumber.toString());
+
+    }
+
+  });
+}
+
+// Operator Buttons - Event Listener
+for (let i = 0; i < operators.length; i++) {
+  operators[i].addEventListener("click", (event) => {
+    if (event.target.textContent == "+") {
+      operatorSelect("+");
+
+    } else if (event.target.textContent == "−" ){
+      operatorSelect("-");
+
+    } else if (event.target.textContent == "×" ){
+      operatorSelect("×");
+
+    } else if (event.target.textContent == "÷" ){
+      operatorSelect("÷");
+
+    } else if (event.target.textContent == "="){
+      operatorSelect("=");
 
     }
 
