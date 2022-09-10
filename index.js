@@ -46,8 +46,31 @@ const numberSelect = (numStr) =>{
 }
 };
 
-const operatorSelect = (operator) => {
 
+//Checks number and values in storage and
+const operatorSelect = (operator) => {
+  const currentNumberStr = userInput();
+  const currentNumber = getNumber();
+  if (!numberStorage){ // If numberStorage empty will store the currentNumber and Operator
+    numberStorage = displayString;
+    operatorStorage = operator;
+    setDisplay("0");
+    return;
+  } // Performs operation against newNumber
+  const numberStored = parseFloat(numberStorage);
+  let newNumber;
+  if(operatorSelect === "+"){
+    newNumber = numberStored + currentNumber;
+  } else if (operatorSelect === "-"){
+    newNumber = numberStored - currentNumber;
+  } else if (operatorSelect === "×"){
+    newNumber = numberStored * currentNumber;
+  } else if (operatorSelect === "÷"){
+    newNumber = numberStored / currentNumber;
+  }
+  numberStored = newNumber.toString();
+  operatorStorage = operator;
+  setDisplay("0");
 
 }
 
