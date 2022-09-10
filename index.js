@@ -95,6 +95,8 @@ for (let i = 0; i < controls.length; i++) {
   controls[i].addEventListener("click", (event) => {
     if (event.target.id == "clear") {
       setDisplay("0");
+      numberStorage = null;
+      operatorStorage = null;
     } else if (event.target.id == "plus-or-minus"){
       const currentNumber = getNumber();
       const currentNumberStr = userInput();
@@ -110,7 +112,8 @@ for (let i = 0; i < controls.length; i++) {
       const currentNumber = getNumber();
       const newNumber = currentNumber / 100;
       setDisplay(newNumber.toString());
-
+      numberStorage = null;
+      operatorStorage = null;
     }
 
   });
@@ -133,7 +136,7 @@ for (let i = 0; i < operators.length; i++) {
 
     } else if (event.target.textContent == "="){
       operatorSelect("=");
-
+   
     }
 
   });
