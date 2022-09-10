@@ -58,6 +58,10 @@ const calculateAndConvertToString = () => {
   } else if (operatorStorage === "×") {
     newNumber = numberStored * currentNumber;
   } else if (operatorStorage === "÷") {
+    if (currentNumber === 0){
+      display.textContent="Haha"
+      return;
+    }
     newNumber = numberStored / currentNumber;
   }
 
