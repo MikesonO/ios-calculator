@@ -25,12 +25,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 1rem;
   font-family: Helvetica, sans-serif;
+  background: rgb(223,223,223);
+  background: linear-gradient(rgba(223,223,223,1) 35%, rgba(158,158,158,1) 100%);
 }
 
 
-
 /* CLASS SELECTORS */
+
 
 .btn {
   border: none;
@@ -99,10 +103,25 @@ body {
   justify-self: flex-end
 }
 
+.copyright{
+  text-decoration: none;
+  color: var(--black);
+  transition: 0.5s;
+}
+
+.copyright:hover{
+  color: var(--dark-grey);
+}
+
 /* ID SELECTORS */
+
+#title{
+  color:var(--dark-grey);
+}
+
 #calculator {
   width: 350px;
-  height: 80vh;
+  height: 600px;
   padding: 1.5rem;
   border-radius: 17.5px;
   background-color: var(--black);
@@ -131,3 +150,32 @@ body {
   font-weight: lighter;
   padding: 0 1.35rem;
 }
+
+
+@media screen and (max-width: 500px){
+  body{
+    background-color: var(--black);
+    background-image: var(--black);
+  }
+  
+  .copyright,
+  #title{
+    color: var(--white);
+  }
+
+  .copyright:hover{
+    color: var(--grey);
+  }
+
+  #calculator{
+    width:80%;
+    height:80%;
+    border-radius: 0px;
+  }
+
+  #display{
+    margin-right: 10px;
+  }
+
+}
+  
