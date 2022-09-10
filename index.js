@@ -16,7 +16,7 @@ const userInput = () => display.textContent.split(',').join('');
 
 const getNumber = () =>{
   return parseFloat(userInput());
-}
+};
 
 const setDisplay = (input) =>{
   if (input === "0"){
@@ -34,7 +34,7 @@ const setDisplay = (input) =>{
   } else {
     display.textContent = parseFloat(wholeNumber).toLocaleString();
   }
-}
+};
 
 
 const numberSelect = (numStr) =>{
@@ -46,49 +46,53 @@ const numberSelect = (numStr) =>{
 }
 };
 
+const calculateAndConvertToString = ()=>{
+  // Performs operation against newNumber
+  const currentNumber = getNumber();
+  const numberStored = parseFloat(numberStorage);
+  let newNumber;
+  if(operatorStorage === "+"){
+    newNumber = numberStored + currentNumber;
+  } else if (operatorStorage === "-"){
+    newNumber = numberStored - currentNumber;
+  } else if (operatorStorage === "×"){
+    newNumber = numberStored * currentNumber;
+  } else if (operatorStorage === "÷"){
+    newNumber = numberStored / currentNumber;
+  }
+
+  return newNumber.toString();
+
+};
+
 
 //Checks number and values in storage and
 const operatorSelect = (operator) => {
-  const currentNumberStr = userInput();
   const currentNumber = getNumber();
   if (!numberStorage){ // If numberStorage empty will store the currentNumber and Operator
-    numberStorage = displayString;
+    numberStorage = currentNumber;
     operatorStorage = operator;
     setDisplay("0");
     return;
-  } // Performs operation against newNumber
-  const numberStored = parseFloat(numberStorage);
-  let newNumber;
-  if(operatorSelect === "+"){
-    newNumber = numberStored + currentNumber;
-  } else if (operatorSelect === "-"){
-    newNumber = numberStored - currentNumber;
-  } else if (operatorSelect === "×"){
-    newNumber = numberStored * currentNumber;
-  } else if (operatorSelect === "÷"){
-    newNumber = numberStored / currentNumber;
-  }
-  numberStored = newNumber.toString();
+  } 
+  numberStorage = calculateAndConvertToString();
   operatorStorage = operator;
   setDisplay("0");
-
-}
-
+};
 
 // Number Buttons - Event Listener
 for(let i =0; i < numbers.length; i++){
-  const number = numbers[i];
   numbers[i].addEventListener("click",(event)=>{
     numberSelect(event.target.id.toString());
-  })
-} 
+  });
+}
 
 decimal.addEventListener("click",()=>{
   const displayString = userInput();
   if (!displayString.includes(".")){
     setDisplay(displayString + ".");
   }
-})
+});
 
 // Controls Buttons - Event Listener
 for (let i = 0; i < controls.length; i++) {
@@ -117,7 +121,7 @@ for (let i = 0; i < controls.length; i++) {
     }
 
   });
-}
+};
 
 // Operator Buttons - Event Listener
 for (let i = 0; i < operators.length; i++) {
@@ -135,8 +139,13 @@ for (let i = 0; i < operators.length; i++) {
       operatorSelect("÷");
 
     } else if (event.target.textContent == "="){
-      operatorSelect("=");
-   
+      if (numberStorage){ // Number in storage
+        setDisplay(calculateAndConvertToString());
+        let numberStorage = null;
+        let operatorStorage = null;
+        
+      }
+
     }
 
   });
