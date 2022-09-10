@@ -13,12 +13,13 @@
 /* ELEMENT SELECTORS */
 *,
 *::after,
-*::before{
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-body{
+
+body {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -31,7 +32,7 @@ body{
 
 /* CLASS SELECTORS */
 
-.btn{
+.btn {
   border: none;
   border-radius: 50px;
   font-size: 1.75rem;
@@ -43,63 +44,63 @@ body{
   transition: 0.5s ease-out;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: var(--dark-grey-hover);
   transition: 0s ease-in;
 }
 
-.btn.spacing{
+.btn.spacing {
   text-align: left;
   padding-left: 25px;
   width: 100%;
   grid-column: 1/3;
 }
 
-.operator{
+.operator {
   background-color: var(--orange);
   color: var(--white);
   font-size: 2rem;
 }
 
-.operator:focus:not(:last-child){
+.operator:focus:not(:last-child) {
   background-color: var(--white);
   color: var(--orange);
 }
 
-.operator:hover{
+.operator:hover {
   background: var(--orange-hover);
 }
 
 
-.controls:first-child{
+.controls:first-child {
   font-size: 1.5rem;
 }
 
-.controls{
+.controls {
   background-color: var(--grey);
   color: var(--black);
 }
 
-.controls:hover{
+.controls:hover {
   background-color: var(--grey-hover);
 }
 
 .plus-position,
-.minus-position{
+.minus-position {
   font-size: 1rem;
   position: relative;
 }
 
-.plus-position{
+.plus-position {
   bottom: 7.5px;
 }
 
-.minus-position{
+.minus-position {
   justify-self: flex-end
 }
 
 /* ID SELECTORS */
-#calculator{
+#calculator {
   width: 350px;
   height: 80vh;
   padding: 1.5rem;
@@ -110,14 +111,14 @@ body{
   gap: 1rem;
 }
 
-#buttons{
+#buttons {
   display: grid;
-  grid-template-columns:repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.25rem 1rem;
   grid-auto-rows: 50px;
 }
 
-#output{
+#output {
   width: 100%;
   height: 10rem;
   background-color: var(--black);
