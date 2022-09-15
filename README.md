@@ -1,6 +1,7 @@
 # iOS Calculator
 <h2>About</h2>
-Replica of the iOS Calculator built with HTML, CSS and JavaSscript.
+Replica of the iOS Calculator built with HTML, CSS and JavaSscript.<br><br>
+<img width="300" alt="Screenshot 2022-09-15 at 22 23 16" src="https://user-images.githubusercontent.com/109072086/190511279-9f07ebfc-12a6-40a3-9b53-16ae274fb851.png">
 
 <h2>Links</h2>
 <ul>
