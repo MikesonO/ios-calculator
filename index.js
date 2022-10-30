@@ -25,8 +25,14 @@ const setDisplay = (input) => {
     display.style.fontSize = "3.3rem";
   } else if (input.length === 9){
     display.style.fontSize = "3rem";
+    for(button of numbers){
+      button.disabled = true;
+    }
   } else {
     display.style.fontSize = "4.5rem";
+    for(button of numbers){
+      button.disabled = false;
+    }
   }
   if (input === "0") {
     controls[0].innerText = "AC";
