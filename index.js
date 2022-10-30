@@ -19,6 +19,15 @@ const getNumber = () => {
 };
 
 const setDisplay = (input) => {
+  if (input.length === 7){
+    display.style.fontSize = "3.7rem";
+  } else if (input.length === 8){
+    display.style.fontSize = "3.3rem";
+  } else if (input.length === 9){
+    display.style.fontSize = "3rem";
+  } else {
+    display.style.fontSize = "4.5rem";
+  }
   if (input === "0") {
     controls[0].innerText = "AC";
   } else {
@@ -66,7 +75,6 @@ const calculateAndConvertToString = () => {
   }
 
   return newNumber.toString();
-
 };
 
 
@@ -115,7 +123,6 @@ for (let i = 0; i < controls.length; i++) {
       } else {
         setDisplay(currentNumberStr.substring(1));
       }
-
     } else if (event.target.id == "percent") {
       const currentNumber = getNumber();
       const newNumber = currentNumber / 100;
