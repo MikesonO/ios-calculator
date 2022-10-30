@@ -19,6 +19,7 @@ const getNumber = () => {
 };
 
 const setDisplay = (input) => {
+  //Reduce the fontSize of display if (input > x)
   if (input.length === 7){
     display.style.fontSize = "3.7rem";
   } else if (input.length === 8){
@@ -27,13 +28,16 @@ const setDisplay = (input) => {
     display.style.fontSize = "3rem";
     for(button of numbers){
       button.disabled = true;
-    }
-  } else {
+    } 
+  } else if (input.length >= 10 ){
+    display.style.fontSize = "2.6rem";
+  }else {
     display.style.fontSize = "4.5rem";
     for(button of numbers){
       button.disabled = false;
     }
   }
+
   if (input === "0") {
     controls[0].innerText = "AC";
   } else {
@@ -43,6 +47,7 @@ const setDisplay = (input) => {
     display.textContent += ".";
     return;
   }
+
   const [wholeNumber, decimal] = input.split(".");
   if (decimal) {
     display.textContent = parseFloat(wholeNumber).toLocaleString() + "." + decimal;
@@ -80,7 +85,10 @@ const calculateAndConvertToString = () => {
     newNumber = numberStored / currentNumber;
   }
 
-  return newNumber.toString();
+  if(newNumber.toString().length > 9){
+    newNumber = Number.parseFloat(newNumber).toExponential(6);
+  } 
+  return newNumber.toString().replace("+","");
 };
 
 
