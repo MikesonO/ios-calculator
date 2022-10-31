@@ -166,8 +166,8 @@ for (let i = 0; i < operators.length; i++) {
     } else if (event.target.textContent == "=") {
       if (numberStorage) { // Number in storage
         setDisplay(calculateAndConvertToString());
-        let numberStorage = null;
-        let operatorStorage = null;
+        numberStorage = null;
+        operatorStorage = null;
 
       }
 
